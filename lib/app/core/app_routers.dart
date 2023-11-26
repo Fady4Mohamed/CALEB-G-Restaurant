@@ -1,10 +1,11 @@
-import 'package:caleb_g/auth/presntation/loginView.dart';
-import 'package:caleb_g/auth/presntation/splashView.dart';
+import 'package:caleb_g/app/auth/presntation/RigsterView.dart';
+import 'package:caleb_g/app/auth/presntation/loginView.dart';
+import 'package:caleb_g/app/auth/presntation/splashView.dart';
 import 'package:go_router/go_router.dart';
 abstract class AppRouter {
   static const ksplashView = '/splashView';
   static const kloginView = '/loginView';
-
+  static const kRigsterView = '/Rigster';
   static final router = GoRouter(
     initialLocation: ksplashView,
     routes: [
@@ -15,6 +16,10 @@ abstract class AppRouter {
       GoRoute(
         path: kloginView,
         builder: (context, state) => const loginView(),
+      ),
+      GoRoute(
+        path: kRigsterView,
+        builder: (context, state) => const rigster(),
       ),
      
       

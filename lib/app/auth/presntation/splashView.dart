@@ -1,8 +1,8 @@
-import 'package:caleb_g/auth/presntation/widgets/SplashBackground.dart';
-import 'package:caleb_g/core/Styles/App_Colors.dart';
-import 'package:caleb_g/core/Styles/text_Style.dart';
-import 'package:caleb_g/core/app_routers.dart';
-import 'package:caleb_g/core/widgets/customeButton.dart';
+import 'package:caleb_g/app/auth/presntation/widgets/SplashBackground.dart';
+import 'package:caleb_g/app/core/Styles/App_Colors.dart';
+import 'package:caleb_g/app/core/Styles/text_Style.dart';
+import 'package:caleb_g/app/core/app_routers.dart';
+import 'package:caleb_g/app/core/widgets/customeButton.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -16,7 +16,7 @@ class splashView extends StatelessWidget {
       backgroundColor: AppColors.kMainColor,
       body: Stack(
         children: [
-          SplashBackground(size: size),
+          SplashBackground(size: size,height: 0.55),
            Column(
             children: [
               Padding(

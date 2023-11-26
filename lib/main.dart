@@ -1,5 +1,5 @@
 
-import 'package:caleb_g/core/app_routers.dart';
+import 'package:caleb_g/app/core/app_routers.dart';
 import 'package:flutter/material.dart';
 
 void main() {

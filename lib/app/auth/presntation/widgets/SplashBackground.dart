@@ -1,15 +1,15 @@
 
-import 'package:caleb_g/core/Styles/App_Colors.dart';
+import 'package:caleb_g/app/core/Styles/App_Colors.dart';
 import 'package:flutter/material.dart';
 
 class SplashBackground extends StatelessWidget {
   const SplashBackground({
     super.key,
-    required this.size,
+    required this.size, required this.height,
   });
 
   final Size size;
-
+ final double height;
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -33,19 +33,7 @@ class SplashBackground extends StatelessWidget {
           children: [
             Image.asset(
               'assats/image/ToyFaces_Tansparent_BG_49.png',
-              height: size.height * 0.55,
-            ),
-            SizedBox(
-              height: size.height * 0.15,
-            )
-          ],
-        ),
-        Column(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            Image.asset(
-              'assats/image/ToyFaces_Tansparent_BG_49.png',
-              height: size.height * 0.55,
+              height: size.height * height,
             ),
             SizedBox(
               height: size.height * 0.15,
