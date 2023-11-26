@@ -1,4 +1,5 @@
-import 'package:caleb_g/auth/presntation/splashView.dart';
+
+import 'package:caleb_g/core/app_routers.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,12 +12,13 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       title: 'Flutter Demo',
       theme: ThemeData(
 
       ),
-      home:splashView(),
+    routerConfig: AppRouter.router,
+  
     );
   }
 }

@@ -1,8 +1,10 @@
 import 'package:caleb_g/auth/presntation/widgets/SplashBackground.dart';
 import 'package:caleb_g/core/Styles/App_Colors.dart';
 import 'package:caleb_g/core/Styles/text_Style.dart';
+import 'package:caleb_g/core/app_routers.dart';
 import 'package:caleb_g/core/widgets/customeButton.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class splashView extends StatelessWidget {
   const splashView({super.key});
@@ -27,7 +29,9 @@ class splashView extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              CustomeButton(size: size),
+              CustomeButton(size: size,onPressed: (){
+                GoRouter.of(context).push(AppRouter.kloginView);
+              },titel: 'Get starteed'),
               SizedBox(
                 width: double.infinity,
                 height: size.height * .04,
