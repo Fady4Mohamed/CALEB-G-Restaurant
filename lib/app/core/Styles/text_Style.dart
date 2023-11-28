@@ -10,7 +10,7 @@ class style {
   }
   static TextStyle style30({required BuildContext context}) {
     return TextStyle(
-      fontSize: MediaQuery.of(context).size.width * 0.072,
+      fontSize: MediaQuery.of(context).size.width * 0.08,
     );
   }
 
