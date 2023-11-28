@@ -16,7 +16,7 @@ class ncustomtextfield extends StatelessWidget {
       alignment: Alignment.center,
       padding: EdgeInsets.only(right: size.width / 30),
       decoration: BoxDecoration(
-        color: const Color(0xffEFEEEE).withOpacity(.6),
+        color: iconColor.withOpacity(.2),
         borderRadius: BorderRadius.circular(20),
       ),
       child: TextField(

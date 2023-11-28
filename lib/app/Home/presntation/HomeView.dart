@@ -1,3 +1,4 @@
+import 'package:caleb_g/app/Home/presntation/widgets/HomeTabView.dart';
 import 'package:caleb_g/app/Home/presntation/widgets/HomeTitel.dart';
 import 'package:caleb_g/app/Home/presntation/widgets/HomeTop.dart';
 import 'package:caleb_g/app/core/widgets/ncustomtextfield.dart';
@@ -21,7 +22,7 @@ class HomeView extends StatelessWidget {
             padding:  EdgeInsets.symmetric(horizontal: size.width*.1,vertical:size.height*.03 ),
             child: ncustomtextfield(hintText:'Search',icon: Icons.search,iconColor: Colors.black, ),
           ),
-          
+          HomeTabView(size: size),
         ],
       ),
     );
