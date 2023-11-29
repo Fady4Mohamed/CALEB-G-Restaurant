@@ -1,11 +1,10 @@
 
   import 'package:flutter/material.dart';
 class ncustomtextfield extends StatelessWidget {
-  const ncustomtextfield({super.key, required this.icon, required this.hintText,  this.isPassword=false, this.onchanged,  this.iconColor=Colors.white});
+  const ncustomtextfield({super.key, required this.icon, required this.hintText,  this.isPassword=false, this.onchanged});
  final IconData icon ;
  final String hintText ;
  final bool isPassword;
- final Color iconColor;
  final void Function(String)? onchanged;
   @override
   Widget build(BuildContext context) {
@@ -16,26 +15,26 @@ class ncustomtextfield extends StatelessWidget {
       alignment: Alignment.center,
       padding: EdgeInsets.only(right: size.width / 30),
       decoration: BoxDecoration(
-        color: iconColor.withOpacity(.2),
+        color: const Color.fromARGB(255, 255, 255, 255).withOpacity(.3),
         borderRadius: BorderRadius.circular(20),
       ),
       child: TextField(
         onChanged:onchanged ,
         style: TextStyle(
-          color: iconColor.withOpacity(.9),
+          color: Colors.white.withOpacity(.9),
         ),
         obscureText: isPassword,
         decoration: InputDecoration(
           prefixIcon: Icon(
             icon,
-            color:iconColor ,
+            color: Colors.white.withOpacity(.8),
           ),
           border: InputBorder.none,
           hintMaxLines: 1,
           hintText: hintText,
           hintStyle: TextStyle(
             fontSize: 14,
-            color:iconColor.withOpacity(.5),
+            color: Colors.white.withOpacity(.5),
           ),
         ),
       ),

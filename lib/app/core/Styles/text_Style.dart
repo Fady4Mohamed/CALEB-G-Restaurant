@@ -35,6 +35,8 @@ class style {
 
   static TextStyle style17({required BuildContext context}) {
     return TextStyle(
+       color: const Color(0xff4A4B4D),
+
       fontSize: MediaQuery.of(context).size.width * 0.045,
     );
   }

@@ -17,8 +17,8 @@ class tabs extends StatelessWidget {
       child: TabBarView(
         children: [
       listitem(size: size),
-       SizedBox(),
-       SizedBox(),
+      listitem(size: size),
+      listitem(size: size),
       ]),
     );
   }
