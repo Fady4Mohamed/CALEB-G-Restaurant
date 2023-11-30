@@ -26,7 +26,7 @@ bool indrawer=false;
   @override
   Widget build(BuildContext context) {
     return AnimatedContainer(
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(borderRadius),color: Colors.white,),
+      decoration: BoxDecoration(borderRadius: BorderRadius.circular(borderRadius),color: Color(0xffF2F2F2),),
       transform: Matrix4.translationValues(x, y, 0)..scale(scale),
 
       duration: Duration(milliseconds: 300),

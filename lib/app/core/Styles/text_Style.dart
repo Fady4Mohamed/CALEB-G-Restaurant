@@ -33,6 +33,14 @@ class style {
         fontWeight: FontWeight.normal);
   }
 
+
+  static TextStyle style17b({required BuildContext context}) {
+    return TextStyle(
+       color: Color.fromARGB(255, 255, 255, 255),
+fontWeight: FontWeight.w500,
+      fontSize: MediaQuery.of(context).size.width * 0.045,
+    );
+  }
   static TextStyle style17({required BuildContext context}) {
     return TextStyle(
        color: const Color(0xff4A4B4D),
