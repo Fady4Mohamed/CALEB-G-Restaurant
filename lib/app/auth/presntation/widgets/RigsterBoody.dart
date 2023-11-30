@@ -1,7 +1,6 @@
 import 'dart:ui';
 
 import 'package:caleb_g/app/auth/presntation/widgets/RigsterContant.dart';
-import 'package:caleb_g/app/auth/presntation/widgets/SplashBackground.dart';
 import 'package:flutter/material.dart';
 
 class RigsterBoody extends StatelessWidget {
@@ -20,7 +19,7 @@ class RigsterBoody extends StatelessWidget {
           children: [
             SizedBox(
               height: size.height,
-              child: SplashBackground(size: size,height: 0.85),
+              child:Image.asset('assats/image/Food,_vegetables_and_fruits_with_FA4A0C_color_background (2).png',fit: BoxFit.cover,),
             ),
             Center(
               child: Column(
