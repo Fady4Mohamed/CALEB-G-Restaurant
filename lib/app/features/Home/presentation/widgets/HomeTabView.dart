@@ -1,4 +1,4 @@
-import 'package:caleb_g/app/Home/presntation/widgets/tabs.dart';
+import 'package:caleb_g/app/features/Home/presentation/widgets/tabs.dart';
 import 'package:caleb_g/app/core/Styles/App_Colors.dart';
 import 'package:caleb_g/app/core/Styles/text_Style.dart';
 import 'package:flutter/material.dart';

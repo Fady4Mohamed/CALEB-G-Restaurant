@@ -1,7 +1,9 @@
-import 'package:caleb_g/app/Home/presntation/widgets/drawerButton.dart';
+import 'package:caleb_g/app/features/Home/presentation/widgets/drawerButton.dart';
 import 'package:caleb_g/app/core/Styles/App_Colors.dart';
+import 'package:caleb_g/app/core/app_routers.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:go_router/go_router.dart';
 
 class DrawerView extends StatelessWidget {
   const DrawerView({super.key});
@@ -23,8 +25,12 @@ class DrawerView extends StatelessWidget {
          Line(size: size),
          CustomDrawerButton(size: size, icon: FontAwesomeIcons.noteSticky, name: 'Privacy policy'),
          Line(size: size),
-         CustomDrawerButton(size: size, icon: FontAwesomeIcons.shieldHalved, name: 'Security')
-          
+         CustomDrawerButton(size: size, icon: FontAwesomeIcons.shieldHalved, name: 'Security'),
+         SizedBox(height: size.height*0.2,),
+           CustomDrawerButton(size: size, icon: FontAwesomeIcons.arrowLeft, name: 'Sign-out',onTap: 
+           (){
+              GoRouter.of(context).pushReplacement(AppRouter.ksplashView);
+           },),
         ],
       ),
     );

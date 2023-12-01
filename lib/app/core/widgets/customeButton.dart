@@ -8,11 +8,11 @@ class CustomeButton extends StatelessWidget {
     super.key,
     required this.size,
     required this.onPressed,
-    required this.titel,
+    required this.titel, this.color,
   });
   final void Function()? onPressed;
   final String titel;
-
+ final Color? color;
   final Size size;
 
   @override
@@ -25,7 +25,7 @@ class CustomeButton extends StatelessWidget {
           child: Center(
               child: Text(
              titel,
-            style: TextStyle(color: AppColors.kMainColor,
+            style: TextStyle(color:color==null? AppColors.kMainColor:Colors.white,
             fontSize: 18),
             
           ))),
@@ -35,7 +35,7 @@ class CustomeButton extends StatelessWidget {
             return RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(30));
           }),
-          backgroundColor: MaterialStateProperty.all(Colors.white)),
+          backgroundColor: MaterialStateProperty.all(color?? Colors.white)),
     );
   }
 }

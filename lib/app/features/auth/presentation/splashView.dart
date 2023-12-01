@@ -1,4 +1,4 @@
-import 'package:caleb_g/app/auth/presntation/widgets/SplashBackground.dart';
+import 'package:caleb_g/app/features/auth/presentation/widgets/SplashBackground.dart';
 import 'package:caleb_g/app/core/Styles/App_Colors.dart';
 import 'package:caleb_g/app/core/Styles/text_Style.dart';
 import 'package:caleb_g/app/core/app_routers.dart';

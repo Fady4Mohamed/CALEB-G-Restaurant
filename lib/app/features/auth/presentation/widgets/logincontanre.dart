@@ -1,7 +1,7 @@
 
 import 'dart:ui';
 
-import 'package:caleb_g/app/auth/presntation/widgets/LoginContant.dart';
+import 'package:caleb_g/app/features/auth/presentation/widgets/LoginContant.dart';
 import 'package:flutter/material.dart';
 
 class logincontaner extends StatelessWidget {

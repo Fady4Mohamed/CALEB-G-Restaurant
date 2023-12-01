@@ -1,6 +1,4 @@
-
-import 'package:caleb_g/app/auth/presntation/widgets/SplashBackground.dart';
-import 'package:caleb_g/app/auth/presntation/widgets/logincontanre.dart';
+import 'package:caleb_g/app/features/auth/presentation/widgets/logincontanre.dart';
 import 'package:caleb_g/app/core/Styles/App_Colors.dart';
 import 'package:flutter/material.dart';
 

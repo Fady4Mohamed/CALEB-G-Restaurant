@@ -1,6 +1,6 @@
 import 'dart:ui';
 
-import 'package:caleb_g/app/auth/presntation/widgets/RigsterBoody.dart';
+import 'package:caleb_g/app/features/auth/presentation/widgets/RigsterBoody.dart';
 import 'package:caleb_g/app/core/Styles/App_Colors.dart';
 import 'package:flutter/material.dart';
 

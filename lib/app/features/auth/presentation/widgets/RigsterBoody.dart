@@ -1,6 +1,5 @@
 import 'dart:ui';
-
-import 'package:caleb_g/app/auth/presntation/widgets/RigsterContant.dart';
+import 'package:caleb_g/app/features/auth/presentation/widgets/RigsterContant.dart';
 import 'package:flutter/material.dart';
 
 class RigsterBoody extends StatelessWidget {

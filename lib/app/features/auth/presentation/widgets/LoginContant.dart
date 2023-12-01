@@ -1,8 +1,8 @@
 
-import 'package:caleb_g/app/auth/presntation/widgets/googelconfirm.dart';
-import 'package:caleb_g/app/auth/presntation/widgets/ncostombutton.dart';
+import 'package:caleb_g/app/features/auth/presentation/widgets/googelconfirm.dart';
+import 'package:caleb_g/app/features/auth/presentation/widgets/ncostombutton.dart';
 import 'package:caleb_g/app/core/widgets/ncustomtextfield.dart';
-import 'package:caleb_g/app/auth/presntation/widgets/textontap.dart';
+import 'package:caleb_g/app/features/auth/presentation/widgets/textontap.dart';
 import 'package:caleb_g/app/core/app_routers.dart';
 import 'package:flutter/material.dart';
 

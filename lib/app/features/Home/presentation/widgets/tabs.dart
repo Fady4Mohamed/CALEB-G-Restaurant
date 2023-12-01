@@ -1,4 +1,4 @@
-import 'package:caleb_g/app/Home/presntation/widgets/listitem.dart';
+import 'package:caleb_g/app/features/Home/presentation/widgets/listitem.dart';
 import 'package:flutter/material.dart';
 
 class tabs extends StatelessWidget {
