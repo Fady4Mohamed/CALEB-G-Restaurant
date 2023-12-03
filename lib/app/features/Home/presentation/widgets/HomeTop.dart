@@ -19,7 +19,9 @@ class HomeTop extends StatelessWidget {
            icon: Icon(Icons.density_medium)),
           Spacer(),
           IconButton(onPressed: 
-          (){}, icon: Icon(Icons.shopping_cart)),
+          (){
+            
+          }, icon: Icon(Icons.shopping_cart)),
         ],
       ),
     );

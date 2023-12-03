@@ -1,7 +1,9 @@
 
 import 'package:caleb_g/app/core/Styles/App_Colors.dart';
+import 'package:caleb_g/app/core/app_routers.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:go_router/go_router.dart';
 
 class HomeNavigationBar extends StatelessWidget {
   const HomeNavigationBar({
@@ -40,7 +42,9 @@ class HomeNavigationBar extends StatelessWidget {
                   color: Colors.grey, size: 25),
             ),
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                GoRouter.of(context).push(AppRouter.kHistoryView);
+              },
               icon: Icon(
                 Icons.restore,
                 color: Colors.grey,
