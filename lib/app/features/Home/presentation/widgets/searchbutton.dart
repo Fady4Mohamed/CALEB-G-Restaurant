@@ -1,5 +1,7 @@
+import 'package:caleb_g/app/core/app_routers.dart';
 import 'package:flutter/material.dart';
 import 'package:caleb_g/app/core/Styles/text_Style.dart';
+import 'package:go_router/go_router.dart';
 class searchbutton extends StatelessWidget {
   const searchbutton({
     super.key,
@@ -15,7 +17,7 @@ class searchbutton extends StatelessWidget {
           horizontal: size.width * .1, vertical: size.height * .03),
       child: TextButton(
         onPressed: () {
-          // search view
+          GoRouter.of(context).push(AppRouter.kSearchView);
         },
         child: SizedBox(
           width: size.width * 0.7,
