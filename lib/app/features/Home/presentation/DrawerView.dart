@@ -10,27 +10,50 @@ class DrawerView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    
     Size size = MediaQuery.of(context).size;
     return Container(
       color: AppColors.kMainColor,
       child: Column(
         children: [
-          SizedBox(height: size.height*0.25,),
-          CustomDrawerButton(size: size,icon: Icons.account_circle_outlined,name: 'Profile'),
+          SizedBox(
+            height: size.height * 0.25,
+          ),
+          CustomDrawerButton(
+              size: size,
+              icon: Icons.account_circle_outlined,
+              name: 'Profile',
+              onTap: () {
+                GoRouter.of(context).push(AppRouter.kProfileView);
+              }),
           Line(size: size),
-         CustomDrawerButton(size: size, icon: Icons.shopping_cart_checkout_rounded, name: 'orders'),
-         Line(size: size),
-         CustomDrawerButton(size: size, icon: Icons.local_offer, name: 'offer and promo'),
-         Line(size: size),
-         CustomDrawerButton(size: size, icon: FontAwesomeIcons.noteSticky, name: 'Privacy policy'),
-         Line(size: size),
-         CustomDrawerButton(size: size, icon: FontAwesomeIcons.shieldHalved, name: 'Security'),
-         SizedBox(height: size.height*0.2,),
-           CustomDrawerButton(size: size, icon: FontAwesomeIcons.arrowLeft, name: 'Sign-out',onTap: 
-           (){
+          CustomDrawerButton(
+              size: size,
+              icon: Icons.shopping_cart_checkout_rounded,
+              name: 'orders'),
+          Line(size: size),
+          CustomDrawerButton(
+              size: size, icon: Icons.local_offer, name: 'offer and promo'),
+          Line(size: size),
+          CustomDrawerButton(
+              size: size,
+              icon: FontAwesomeIcons.noteSticky,
+              name: 'Privacy policy'),
+          Line(size: size),
+          CustomDrawerButton(
+              size: size,
+              icon: FontAwesomeIcons.shieldHalved,
+              name: 'Security'),
+          SizedBox(
+            height: size.height * 0.2,
+          ),
+          CustomDrawerButton(
+            size: size,
+            icon: FontAwesomeIcons.arrowLeft,
+            name: 'Sign-out',
+            onTap: () {
               GoRouter.of(context).pushReplacement(AppRouter.ksplashView);
-           },),
+            },
+          ),
         ],
       ),
     );
@@ -48,8 +71,15 @@ class Line extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding:  EdgeInsets.only(left: size.width*.1,right:size.width*.6 , top: size.height*.02,bottom: size.height*.02),
-      child: Divider(color: Color.fromARGB(255, 202, 202, 202),thickness: .5,),
+      padding: EdgeInsets.only(
+          left: size.width * .1,
+          right: size.width * .6,
+          top: size.height * .02,
+          bottom: size.height * .02),
+      child: Divider(
+        color: Color.fromARGB(255, 202, 202, 202),
+        thickness: .5,
+      ),
     );
   }
 }

@@ -5,6 +5,7 @@ import 'package:caleb_g/app/features/auth/presentation/RigsterView.dart';
 import 'package:caleb_g/app/features/auth/presentation/loginView.dart';
 import 'package:caleb_g/app/features/auth/presentation/splashView.dart';
 import 'package:caleb_g/app/features/product/presentation/ProductView.dart';
+import 'package:caleb_g/app/features/profile/presentation/ProfileView.dart';
 import 'package:go_router/go_router.dart';
 
 abstract class AppRouter {
@@ -15,6 +16,7 @@ abstract class AppRouter {
   static const kProductView = '/productView';
   static const kHistoryView = '/HistoryView';
   static const kSearchView = '/SearchView';
+  static const kProfileView = '/ProfileVew';
   static final router = GoRouter(
     initialLocation: ksplashView,
     routes: [
@@ -45,6 +47,10 @@ abstract class AppRouter {
       GoRoute(
         path: kSearchView,
         builder: (context, state) => const SearchView(),
+      ),
+      GoRoute(
+        path: kProfileView,
+        builder: (context, state) => const ProfileView(),
       ),
     ],
   );

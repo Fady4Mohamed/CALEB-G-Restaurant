@@ -32,7 +32,13 @@ class style {
         fontSize: MediaQuery.of(context).size.width * 0.05,
         fontWeight: FontWeight.normal);
   }
+  static TextStyle style18({required BuildContext context}) {
+    return TextStyle(
+       color: Color.fromARGB(255, 0, 0, 0),
 
+      fontSize: MediaQuery.of(context).size.width * 0.04,
+    );
+  }
 
   static TextStyle style17b({required BuildContext context}) {
     return TextStyle(

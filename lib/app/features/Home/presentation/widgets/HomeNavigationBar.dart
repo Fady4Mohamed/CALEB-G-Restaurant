@@ -37,7 +37,9 @@ class HomeNavigationBar extends StatelessWidget {
                   color: Colors.grey, size: 25),
             ),
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                GoRouter.of(context).push(AppRouter.kProfileView);
+              },
               icon: FaIcon(FontAwesomeIcons.user,
                   color: Colors.grey, size: 25),
             ),
