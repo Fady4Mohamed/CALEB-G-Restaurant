@@ -29,7 +29,10 @@ class DrawerView extends StatelessWidget {
           CustomDrawerButton(
               size: size,
               icon: Icons.shopping_cart_checkout_rounded,
-              name: 'orders'),
+              name: 'orders',
+              onTap: (){
+                 GoRouter.of(context).push(AppRouter.kCartView);
+              }, ),
           Line(size: size),
           CustomDrawerButton(
               size: size, icon: Icons.local_offer, name: 'offer and promo'),

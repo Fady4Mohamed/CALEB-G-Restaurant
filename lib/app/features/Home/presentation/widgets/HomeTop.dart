@@ -1,5 +1,7 @@
 
+import 'package:caleb_g/app/core/app_routers.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class HomeTop extends StatelessWidget {
   const HomeTop({
@@ -20,7 +22,7 @@ class HomeTop extends StatelessWidget {
           Spacer(),
           IconButton(onPressed: 
           (){
-            
+            GoRouter.of(context).push(AppRouter.kCartView);
           }, icon: Icon(Icons.shopping_cart)),
         ],
       ),
