@@ -1,8 +1,8 @@
 import 'package:caleb_g/app/core/Styles/App_Colors.dart';
 import 'package:caleb_g/app/core/widgets/customeButton.dart';
 import 'package:caleb_g/app/features/card/presentation/widgets/CartAppBar.dart';
-import 'package:caleb_g/app/features/card/presentation/widgets/CartContainer.dart';
 import 'package:caleb_g/app/features/card/presentation/widgets/CartGuidetext.dart';
+import 'package:caleb_g/app/features/card/presentation/widgets/Cartlistt.dart';
 import 'package:flutter/material.dart';
 
 class CartView extends StatelessWidget {
@@ -17,18 +17,7 @@ class CartView extends StatelessWidget {
          CartAppBar(size: size),
          CartGuidetext(size: size),
          SizedBox(height: size.height*0.01,),
-         Expanded(
-           child: ListView.builder(
-                 padding: EdgeInsets.only(bottom:20),
-                 itemCount: 4,
-                   itemBuilder: (BuildContext contex, int i) {
-            return Center(child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child:CartContainer(size: size),
-            ));
-                   },
-                 ),
-         ),
+         CartList(size: size),
          CustomeButton(size: size, onPressed: (){}, titel: 'Complete order',color: AppColors.kMainColor,),
          SizedBox(height: size.height*0.04,),
         ],
