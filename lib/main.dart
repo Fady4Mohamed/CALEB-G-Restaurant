@@ -1,8 +1,15 @@
 
 import 'package:caleb_g/app/core/app_routers.dart';
+import 'package:caleb_g/firebase_options.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+void main() async {
+ await Firebase.initializeApp(
+  options: DefaultFirebaseOptions.currentPlatform,
+);  Firebase.initializeApp(
+  options: DefaultFirebaseOptions.currentPlatform,
+);
   runApp(const MyApp());
 }
 

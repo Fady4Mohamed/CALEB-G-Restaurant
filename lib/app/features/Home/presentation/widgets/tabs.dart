@@ -15,7 +15,8 @@ class tabs extends StatelessWidget {
       // tab view height
       height: size.height * 0.43,
       child: TabBarView(
-        children: [
+        children: 
+      [
       listitem(size: size),
       listitem(size: size),
       listitem(size: size),

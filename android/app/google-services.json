@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "974863485357",
+    "project_id": "caleb-g",
+    "storage_bucket": "caleb-g.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:974863485357:android:bd7771de05ab439f72f924",
+        "android_client_info": {
+          "package_name": "com.example.caleb_g"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnDzBl1oTjX3MMFSUv4yyx1-K1cRjZMgM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
