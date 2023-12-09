@@ -11,21 +11,26 @@ class ProductView extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      body: Column(
-        children: [
-          productappbar(size: size),
-          Productinfo(size: size),
-          Spacer(),
-          CustomeButton(
-            size: size,
-            onPressed: () {},
-            titel: 'Add to cart',
-            color: AppColors.kMainColor,
+      body: SingleChildScrollView(
+        child: SizedBox(
+          height: size.height,
+          child: Column(
+            children: [
+              productappbar(size: size),
+              Productinfo(size: size),
+              Spacer(),
+              CustomeButton(
+                size: size,
+                onPressed: () {},
+                titel: 'Add to cart',
+                color: AppColors.kMainColor,
+              ),
+              SizedBox(
+                height: size.height * .02,
+              )
+            ],
           ),
-          SizedBox(
-            height: size.height * .02,
-          )
-        ],
+        ),
       ),
     );
   }
