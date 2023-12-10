@@ -42,7 +42,9 @@ class HomeNavigationBar extends StatelessWidget {
               ),
             ),
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                  GoRouter.of(context).push(AppRouter.kLikeView);
+              },
               icon: FaIcon(FontAwesomeIcons.heart,
                   color: Colors.grey, size: 25),
             ),
