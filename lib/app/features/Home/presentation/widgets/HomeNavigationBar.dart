@@ -23,12 +23,22 @@ class HomeNavigationBar extends StatelessWidget {
       child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.home,
-                color: AppColors.kMainColor,
-                size: 35,
+            Container(
+              decoration: BoxDecoration( boxShadow: [
+                    BoxShadow(
+                      color:
+                          AppColors.kMainColor.withOpacity(0.2), // Color of the shadow
+                      spreadRadius: 0.3, // Spread radius
+                      blurRadius: 20, // Blur radius
+                    ),
+                  ],),
+              child: IconButton(
+                onPressed: () {},
+                icon: Icon(
+                  Icons.home,
+                  color: AppColors.kMainColor,
+                  size: 35,
+                ),
               ),
             ),
             IconButton(

@@ -5,8 +5,8 @@ import 'package:caleb_g/app/features/Home/presentation/widgets/HomeTop.dart';
 import 'package:caleb_g/app/features/Home/presentation/widgets/searchbutton.dart';
 import 'package:flutter/material.dart';
 
-class HomeViewBoody extends StatefulWidget {
-  const HomeViewBoody({
+class HomeViewAnimatContainer extends StatefulWidget {
+  const HomeViewAnimatContainer({
     super.key,
     required this.size,
   });
@@ -14,10 +14,10 @@ class HomeViewBoody extends StatefulWidget {
   final Size size;
 
   @override
-  State<HomeViewBoody> createState() => _HomeViewBoodyState();
+  State<HomeViewAnimatContainer> createState() => _HomeViewAnimatContainerState();
 }
 
-class _HomeViewBoodyState extends State<HomeViewBoody> {
+class _HomeViewAnimatContainerState extends State<HomeViewAnimatContainer> {
   double x = 0;
   double y = 0;
   double scale = 1;

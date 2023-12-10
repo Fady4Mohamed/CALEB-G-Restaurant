@@ -8,9 +8,11 @@ import 'package:caleb_g/app/features/auth/presentation/widgets/textontap.dart';
 class RigsterContant extends StatelessWidget {
   const RigsterContant({
     super.key,
-    required this.size,
+    required this.size, this.onchangedemali, this.onchangedpassword, this.onTap,
   });
-
+  final void Function(String)? onchangedemali;
+  final void Function(String)? onchangedpassword;
+  final void Function()? onTap;
   final Size size;
 
   @override
@@ -36,17 +38,13 @@ class RigsterContant extends StatelessWidget {
         ncustomtextfield(
           icon: Icons.email_outlined,
           hintText: 'Email...',
-          onchanged: (p0) {
-           
-          },
+          onchanged: onchangedemali,
         ),
         ncustomtextfield(
           icon: Icons.lock_outline,
           hintText: 'Password...',
           isPassword: true,
-          onchanged: (p0) {
-           
-          },
+          onchanged:onchangedpassword,
         ),
         textontap(
           titel: 'you have an account',
@@ -57,8 +55,7 @@ class RigsterContant extends StatelessWidget {
         SizedBox(height: size.width * .25),
         ncustombutton(
           titel: 'regist',
-          onTap: () {
-          },
+          onTap: onTap,
         ),
       ],
     );

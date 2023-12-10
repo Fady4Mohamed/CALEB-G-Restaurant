@@ -1,7 +1,7 @@
 
 
 import 'package:caleb_g/app/features/Home/presentation/DrawerView.dart';
-import 'package:caleb_g/app/features/Home/presentation/widgets/HomeViewBoody.dart';
+import 'package:caleb_g/app/features/Home/presentation/widgets/HomeViewAnimatContainer.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatelessWidget {
@@ -14,7 +14,7 @@ class HomeView extends StatelessWidget {
       body: Stack(
         children: [
            DrawerView(),
-          HomeViewBoody(size: size),
+          HomeViewAnimatContainer(size: size),
          
         ],
       ),
