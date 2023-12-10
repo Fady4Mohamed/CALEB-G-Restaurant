@@ -9,22 +9,15 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 
-class LoginContant extends StatefulWidget {
+class LoginContant extends StatelessWidget {
   const LoginContant({
     super.key,
-    required this.size,
+    required this.size, this.onTap, this.onchangedemali, this.onchangedpassword,
   });
-
+  final void Function()? onTap;
   final Size size;
-
-  @override
-  State<LoginContant> createState() => _LoginContantState();
-}
-
-String? password, email;
-bool isLoding = false;
-
-class _LoginContantState extends State<LoginContant> {
+  final void Function(String)? onchangedemali;
+  final void Function(String)? onchangedpassword;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -33,8 +26,8 @@ class _LoginContantState extends State<LoginContant> {
       children: [
         Padding(
           padding: EdgeInsets.only(
-            top: widget.size.width * .15,
-            bottom: widget.size.width * .1,
+            top: size.width * .15,
+            bottom: size.width * .1,
           ),
           child: Text(
             'SIGN IN',
@@ -48,17 +41,13 @@ class _LoginContantState extends State<LoginContant> {
         ncustomtextfield(
           icon: Icons.email_outlined,
           hintText: 'Email...',
-          onchanged: (p0) {
-            email = p0;
-          },
+          onchanged:onchangedemali,
         ),
         ncustomtextfield(
           icon: Icons.lock_outline,
           hintText: 'Password...',
           isPassword: true,
-          onchanged: (p0) {
-            password = p0;
-          },
+          onchanged:onchangedpassword ,
         ),
         textontap(
           titel: 'create a new Account',
@@ -68,11 +57,9 @@ class _LoginContantState extends State<LoginContant> {
         ),
         googelconfirm(),
       SizedBox(
-        height: widget.size.height*0.02,
+        height: size.height*0.02,
       ),
-        ncustombutton(titel: 'login',onTap: () {
-          GoRouter.of(context).push(AppRouter.kHomeView);
-        },),
+        ncustombutton(titel: 'login',onTap: onTap,),
       ],
     );
   }
