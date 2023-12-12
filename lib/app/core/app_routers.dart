@@ -8,9 +8,23 @@ import 'package:caleb_g/app/features/card/presentation/CartView.dart';
 import 'package:caleb_g/app/features/like/presentation/LikeView.dart';
 import 'package:caleb_g/app/features/product/presentation/ProductView.dart';
 import 'package:caleb_g/app/features/profile/presentation/ProfileView.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:go_router/go_router.dart';
 
 abstract class AppRouter {
+static late  String initializerout;
+static  initializeApp()async {
+  print('object');
+ User? user;
+    await  FirebaseAuth.instance.authStateChanges().listen((event) {
+        user = event;
+      });
+      if (user == null) {
+        initializerout= AppRouter.ksplashView ;
+      } else {
+        initializerout= AppRouter.kHomeView;
+      }
+      }
   static const ksplashView = '/splashView';
   static const kloginView = '/loginView';
   static const kRigsterView = '/Rigster';
@@ -21,8 +35,8 @@ abstract class AppRouter {
   static const kProfileView = '/ProfileVew';
   static const kCartView = '/CartVew';
   static const kLikeView = '/LikeVew';
-  static final router = GoRouter(
-    initialLocation: ksplashView,
+  static var router = GoRouter  (
+    initialLocation: initializerout,
     routes: [
       GoRoute(
         path: ksplashView,

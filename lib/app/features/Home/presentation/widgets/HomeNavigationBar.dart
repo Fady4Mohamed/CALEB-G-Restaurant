@@ -57,7 +57,7 @@ class HomeNavigationBar extends StatelessWidget {
             ),
             IconButton(
               onPressed: () {
-                GoRouter.of(context).push(AppRouter.kHistoryView);
+                context.push(AppRouter.kHistoryView);
               },
               icon: Icon(
                 Icons.restore,
