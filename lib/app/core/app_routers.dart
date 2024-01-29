@@ -14,7 +14,6 @@ import 'package:go_router/go_router.dart';
 abstract class AppRouter {
 static late  String initializerout;
 static  initializeApp()async {
-  print('object');
  User? user;
     await  FirebaseAuth.instance.authStateChanges().listen((event) {
         user = event;

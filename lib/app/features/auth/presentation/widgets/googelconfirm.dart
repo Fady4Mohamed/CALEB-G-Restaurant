@@ -1,6 +1,8 @@
-
+import 'package:caleb_g/app/core/app_routers.dart';
+import 'package:caleb_g/app/features/auth/data/mange/loginWithGooglecubit/login_with_google_cubit.dart';
 import 'package:flutter/material.dart';
-
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 class googelconfirm extends StatelessWidget {
   const googelconfirm({super.key});
@@ -10,57 +12,33 @@ class googelconfirm extends StatelessWidget {
 
     return GestureDetector(
       onTap: () async {
-        // print('============1==========');
-        // final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
-        //   print('=======2===============');
-        //   // Obtain the auth details from the request
-        //   if (googleUser != null) {
-        //     final GoogleSignInAuthentication googleAuth =
-        //         await googleUser.authentication;
-        //           print('============3===========');
-        //     // Create a new credential
-        //     final credential = GoogleAuthProvider.credential(
-        //       accessToken: googleAuth.accessToken,
-        //       idToken: googleAuth.idToken,
-        //     );
-        //             print('============4===========');
-        //     // Once signed in, return the UserCredential
-        //     await FirebaseAuth.instance.signInWithCredential(credential);
-        //             print('hhhhhhhhhhhi');
-          
-          } ,
-      child: Container(
-        height: size.height / 9,
-        width: size.height / 7,
-        alignment: Alignment.center,
-        decoration: BoxDecoration(
-          color: Colors.black.withOpacity(.1),
-          borderRadius: BorderRadius.circular(20),
+        print('object');
+        BlocProvider.of<LoginWithGoogleCubit>(context).signInWithGoogle();
+      },
+      child: BlocListener<LoginWithGoogleCubit, LoginWithGoogleState>(
+        listener: (context, state) {
+          if (state is LoginWithGooglesuccess) {
+            GoRouter.of(context).push(AppRouter.kHomeView);
+          }
+          if (state is LoginWithGooglefailure) {
+            print(state.error.toString());
+          }
+          if (state is LoginWithGoogleloding) {
+            print('loding');
+          }
+        },
+        child: Container(
+          height: size.height / 9,
+          width: size.height / 7,
+          alignment: Alignment.center,
+          decoration: BoxDecoration(
+            color: Colors.black.withOpacity(.1),
+            borderRadius: BorderRadius.circular(20),
+          ),
+          child: Image.asset('assats/image/google-logo-9808.png',
+              height: size.height / 9 - 16),
         ),
-        child: Image.asset('assats/image/google-logo-9808.png',
-            height: size.height / 9 - 16),
       ),
     );
   }
 }
-Future signInWithGoogle(context) async {
-          // // Trigger the authentication flow
-          // final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
-
-          // // Obtain the auth details from the request
-          // if (googleUser != null) {
-          //   final GoogleSignInAuthentication? googleAuth =
-          //       await googleUser.authentication;
-
-          //   // Create a new credential
-          //   final credential = GoogleAuthProvider.credential(
-          //     accessToken: googleAuth?.accessToken,
-          //     idToken: googleAuth?.idToken,
-          //   );
-
-          //   // Once signed in, return the UserCredential
-          //   await FirebaseAuth.instance.signInWithCredential(credential);
-           
-           
-         // }
-        }

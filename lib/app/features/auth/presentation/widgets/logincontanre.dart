@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:caleb_g/app/features/auth/data/mange/loginWithGooglecubit/login_with_google_cubit.dart';
 import 'package:caleb_g/app/features/auth/data/mange/logincubit/logincubit_cubit.dart';
 import 'package:caleb_g/app/features/auth/presentation/widgets/LoginListener.dart';
 import 'package:flutter/material.dart';
@@ -11,8 +12,15 @@ class logincontaner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return BlocProvider(
-      create: (context) => logincubitCubit(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => logincubitCubit(),
+        ),
+        BlocProvider(
+          create: (context) => LoginWithGoogleCubit(),
+        ),
+      ],
       child: Center(
         child: Column(
           children: [
