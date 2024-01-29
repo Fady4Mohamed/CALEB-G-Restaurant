@@ -12,7 +12,6 @@ class googelconfirm extends StatelessWidget {
 
     return GestureDetector(
       onTap: () async {
-        print('object');
         BlocProvider.of<LoginWithGoogleCubit>(context).signInWithGoogle();
       },
       child: BlocListener<LoginWithGoogleCubit, LoginWithGoogleState>(

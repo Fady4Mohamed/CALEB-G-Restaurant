@@ -10,15 +10,18 @@ import 'package:caleb_g/app/features/product/presentation/ProductView.dart';
 import 'package:caleb_g/app/features/profile/presentation/ProfileView.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:go_router/go_router.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 abstract class AppRouter {
 static late  String initializerout;
 static  initializeApp()async {
+  GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
  User? user;
     await  FirebaseAuth.instance.authStateChanges().listen((event) {
         user = event;
       });
-      if (user == null) {
+  //    print(user!.email);
+      if (user == null && googleUser==null) {
         initializerout= AppRouter.ksplashView ;
       } else {
         initializerout= AppRouter.kHomeView;
