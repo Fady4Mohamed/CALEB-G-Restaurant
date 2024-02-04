@@ -1,26 +1,79 @@
 {
   "project_info": {
-    "project_number": "974863485357",
-    "project_id": "caleb-g",
-    "storage_bucket": "caleb-g.appspot.com"
+    "project_number": "1032299672180",
+    "project_id": "resturant-9e9ef",
+    "storage_bucket": "resturant-9e9ef.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:974863485357:android:bd7771de05ab439f72f924",
+        "mobilesdk_app_id": "1:1032299672180:android:1d8e908638425c0a149721",
         "android_client_info": {
-          "package_name": "com.example.caleb_g"
+          "package_name": "com.example.admin_caleb_g"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "1032299672180-hv39tr9hqqjv0blfnilra2pp37q2jspu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
-          "current_key": "AIzaSyDnDzBl1oTjX3MMFSUv4yyx1-K1cRjZMgM"
+          "current_key": "AIzaSyChyNZv77Yo4W2fTNFvnmROGl-IzYoKPhU"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1032299672180-hv39tr9hqqjv0blfnilra2pp37q2jspu.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1032299672180-9cfjigu2lj5nvhe1918s0geodja0on5j.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.adminCalebg.RunnerTests"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1032299672180:android:7429a97ff69810b1149721",
+        "android_client_info": {
+          "package_name": "com.example.caleb_g"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1032299672180-hv39tr9hqqjv0blfnilra2pp37q2jspu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChyNZv77Yo4W2fTNFvnmROGl-IzYoKPhU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1032299672180-hv39tr9hqqjv0blfnilra2pp37q2jspu.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1032299672180-9cfjigu2lj5nvhe1918s0geodja0on5j.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.adminCalebg.RunnerTests"
+              }
+            }
+          ]
         }
       }
     }

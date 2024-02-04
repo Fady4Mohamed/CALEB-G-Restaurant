@@ -20,7 +20,6 @@ static  initializeApp()async {
     await  FirebaseAuth.instance.authStateChanges().listen((event) {
         user = event;
       });
-  //    print(user!.email);
       if (user == null && googleUser==null) {
         initializerout= AppRouter.ksplashView ;
       } else {
