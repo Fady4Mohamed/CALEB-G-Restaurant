@@ -11,12 +11,17 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      body: Stack(
-        children: [
-           DrawerView(),
-          HomeViewAnimatContainer(size: size),
-         
-        ],
+      body: SingleChildScrollView(
+        child: SizedBox(
+          height: size.height,
+          child: Stack(
+            children: [
+               DrawerView(),
+              HomeViewAnimatContainer(size: size),
+             
+            ],
+          ),
+        ),
       ),
     );
   }

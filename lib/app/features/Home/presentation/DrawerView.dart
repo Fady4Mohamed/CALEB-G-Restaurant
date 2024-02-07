@@ -1,7 +1,9 @@
+import 'package:caleb_g/app/core/manager/models/FoodModel.dart';
 import 'package:caleb_g/app/features/Home/presentation/widgets/Line.dart';
 import 'package:caleb_g/app/features/Home/presentation/widgets/drawerButton.dart';
 import 'package:caleb_g/app/core/Styles/App_Colors.dart';
 import 'package:caleb_g/app/core/app_routers.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -29,20 +31,22 @@ class DrawerView extends StatelessWidget {
               }),
           Line(size: size),
           CustomDrawerButton(
-              size: size,
-              icon: Icons.shopping_cart_checkout_rounded,
-              name: 'orders',
-              onTap: (){
-                 GoRouter.of(context).push(AppRouter.kCartView);
-              }, ),
+            size: size,
+            icon: Icons.shopping_cart_checkout_rounded,
+            name: 'orders',
+            onTap: () {
+              GoRouter.of(context).push(AppRouter.kCartView);
+            },
+          ),
           Line(size: size),
           CustomDrawerButton(
               size: size, icon: Icons.local_offer, name: 'offer and promo'),
           Line(size: size),
           CustomDrawerButton(
-              size: size,
-              icon: FontAwesomeIcons.noteSticky,
-              name: 'Privacy policy'),
+            size: size,
+            icon: FontAwesomeIcons.noteSticky,
+            name: 'Privacy policy',
+          ),
           Line(size: size),
           CustomDrawerButton(
               size: size,
@@ -55,7 +59,7 @@ class DrawerView extends StatelessWidget {
             size: size,
             icon: FontAwesomeIcons.arrowLeft,
             name: 'Sign-out',
-            onTap: ()async {
+            onTap: () async {
               await FirebaseAuth.instance.signOut();
               GoRouter.of(context).go(AppRouter.ksplashView);
             },
