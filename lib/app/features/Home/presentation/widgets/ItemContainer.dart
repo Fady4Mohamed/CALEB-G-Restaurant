@@ -1,4 +1,5 @@
 import 'package:caleb_g/app/core/app_routers.dart';
+import 'package:caleb_g/app/core/manager/models/FoodModel.dart';
 import 'package:caleb_g/app/features/Home/presentation/widgets/Itemimage.dart';
 import 'package:caleb_g/app/features/Home/presentation/widgets/itemName.dart';
 import 'package:caleb_g/app/features/Home/presentation/widgets/itemprice.dart';
@@ -9,8 +10,9 @@ class ItemContainer extends StatelessWidget {
   const ItemContainer({
     super.key,
     required this.size,
+    required this.food,
   });
-
+  final FoodModel food;
   final Size size;
 
   @override
@@ -43,13 +45,13 @@ class ItemContainer extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  itemName(size: size),
-                  itemprice(size: size),
+                  itemName(size: size, food: food),
+                  itemprice(size: size, food: food),
                 ],
               ),
             ),
           ),
-          Itemimage(size: size),
+          Itemimage(size: size,food: food),
         ],
       ),
     );

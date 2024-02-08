@@ -8,10 +8,20 @@ class FetchFoodCubit extends Cubit<FetchFoodState> {
   FetchFoodCubit() : super(FetchFoodInitial());
   List<FoodModel> allfoodlist = [];
   getallfood() async {
-    QuerySnapshot data =
-        await FirebaseFirestore.instance.collection('food').get();
-    for (int v = 0; v < data.docs.length; v++) {
-      allfoodlist.add(FoodModel.fromjason(data.docs[v]));
-    }
+    emit(FetchFoodloding());
+    print('llllllllllllloding');
+    try {
+  QuerySnapshot data =
+      await FirebaseFirestore.instance.collection('food').get();
+  for (int v = 0; v < data.docs.length; v++) {
+    allfoodlist.add(FoodModel.fromjason(data.docs[v]));
+    print(allfoodlist[v]);
+  }
+  emit(FetchFoodsuccsed());
+} on Exception catch (e) {
+  emit(FetchFoodfailer(e.toString()));
+  print(e.toString());
+}
+    
   }
 }

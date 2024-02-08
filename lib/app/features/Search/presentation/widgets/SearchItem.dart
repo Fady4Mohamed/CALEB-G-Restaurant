@@ -44,8 +44,8 @@ class SearchItem extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.end,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            itemName(size: size),
-            itemprice(size: size),
+            //itemName(size: size),
+            //itemprice(size: size),
           ],
         ),
       ),

@@ -18,7 +18,7 @@ class HasHistoryBoody extends StatelessWidget {
         itemBuilder: (BuildContext contex, int i) {
           return Center(child: Padding(
             padding: const EdgeInsets.all(8.0),
-            child: ItemContainer(size: size),
+            child:SizedBox()// ItemContainer(size: size),
           ));
         },
       );
