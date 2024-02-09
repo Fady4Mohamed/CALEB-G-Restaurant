@@ -1,5 +1,6 @@
 
 import 'package:caleb_g/app/core/app_routers.dart';
+import 'package:caleb_g/app/core/manager/models/FoodModel.dart';
 import 'package:caleb_g/app/features/Home/presentation/widgets/itemName.dart';
 import 'package:caleb_g/app/features/Home/presentation/widgets/itemprice.dart';
 import 'package:flutter/material.dart';
@@ -9,9 +10,9 @@ import 'package:go_router/go_router.dart';
 class SearchItem extends StatelessWidget {
   const SearchItem({
     super.key,
-    required this.size,
+    required this.size, required this.food,
   });
-
+  final FoodModel food;
   final Size size;
 
   @override
@@ -44,15 +45,15 @@ class SearchItem extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.end,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            //itemName(size: size),
-            //itemprice(size: size),
+            itemName(size: size,food: food),
+            itemprice(size: size,food: food),
           ],
         ),
       ),
     ),
     Padding(
           padding:  EdgeInsets.only(left:((size.width * .4)/2)-size.height*.08),
-          child: CircleAvatar(radius:size.height*.08,foregroundImage: AssetImage('assats/image/ahlylogo.png',),),
+          child: CircleAvatar(radius:size.height*.08,foregroundImage: NetworkImage(food.image,),),
         ),
            ],
          ),
