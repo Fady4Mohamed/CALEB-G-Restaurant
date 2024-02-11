@@ -1,13 +1,14 @@
 
 
+import 'package:caleb_g/app/core/manager/models/FoodModel.dart';
 import 'package:flutter/material.dart';
 
 class Productimage extends StatelessWidget {
   const Productimage({
     super.key,
-    required this.size,
+    required this.size, required this.food,
   });
-
+  final FoodModel food;
   final Size size;
 
   @override
@@ -26,7 +27,7 @@ class Productimage extends StatelessWidget {
       child: CircleAvatar(
         
         radius: size.width * .25,
-        foregroundImage: AssetImage('assats/image/ahlylogo.png'),
+        foregroundImage: NetworkImage(food.image),
       ),
     );
   }

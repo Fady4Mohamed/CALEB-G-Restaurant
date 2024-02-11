@@ -1,3 +1,4 @@
+import 'package:caleb_g/app/core/manager/models/FoodModel.dart';
 import 'package:caleb_g/app/features/History/presentaion/HistoryView.dart';
 import 'package:caleb_g/app/features/Home/presentation/HomeView.dart';
 import 'package:caleb_g/app/features/Search/presentation/SearchView.dart';
@@ -13,19 +14,20 @@ import 'package:go_router/go_router.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 abstract class AppRouter {
-static late  String initializerout;
-static  initializeApp()async {
-  GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
- User? user;
-    await  FirebaseAuth.instance.authStateChanges().listen((event) {
-        user = event;
-      });
-      if (user == null && googleUser==null) {
-        initializerout= AppRouter.ksplashView ;
-      } else {
-        initializerout= AppRouter.kHomeView;
-      }
-      }
+  static late String initializerout;
+  static initializeApp() async {
+    GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+    User? user;
+    await FirebaseAuth.instance.authStateChanges().listen((event) {
+      user = event;
+    });
+    if (user == null && googleUser == null) {
+      initializerout = AppRouter.ksplashView;
+    } else {
+      initializerout = AppRouter.kHomeView;
+    }
+  }
+
   static const ksplashView = '/splashView';
   static const kloginView = '/loginView';
   static const kRigsterView = '/Rigster';
@@ -36,7 +38,7 @@ static  initializeApp()async {
   static const kProfileView = '/ProfileVew';
   static const kCartView = '/CartVew';
   static const kLikeView = '/LikeVew';
-  static var router = GoRouter  (
+  static var router = GoRouter(
     initialLocation: initializerout,
     routes: [
       GoRoute(
@@ -57,7 +59,10 @@ static  initializeApp()async {
       ),
       GoRoute(
         path: kProductView,
-        builder: (context, state) => const ProductView(),
+        builder: (context, state) {
+          final food = state.extra as FoodModel;
+          return ProductView(food: food);
+        },
       ),
       GoRoute(
         path: kHistoryView,

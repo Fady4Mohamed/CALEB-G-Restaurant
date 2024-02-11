@@ -19,7 +19,7 @@ class ItemContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        GoRouter.of(context).push(AppRouter.kProductView);
+        GoRouter.of(context).push(AppRouter.kProductView, extra: food);
       },
       child: Stack(
         children: [
@@ -51,7 +51,7 @@ class ItemContainer extends StatelessWidget {
               ),
             ),
           ),
-          Itemimage(size: size,food: food),
+          Itemimage(size: size, food: food),
         ],
       ),
     );

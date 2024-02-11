@@ -17,8 +17,7 @@ class Itemimage extends StatelessWidget {
           EdgeInsets.only(left: ((size.width * .5) / 2) - size.height * .09),
       child: CircleAvatar(
         radius: size.height * .09,
-        child:
-            ClipOval(child: Image.network(food.image)),
+        foregroundImage: NetworkImage(food.image),
       ),
     );
   }

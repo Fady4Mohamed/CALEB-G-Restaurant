@@ -1,12 +1,13 @@
 import 'package:caleb_g/app/core/Styles/App_Colors.dart';
+import 'package:caleb_g/app/core/manager/models/FoodModel.dart';
 import 'package:caleb_g/app/core/widgets/customeButton.dart';
 import 'package:caleb_g/app/features/product/presentation/widgets/Productinfo.dart';
 import 'package:caleb_g/app/features/product/presentation/widgets/productappbar.dart';
 import 'package:flutter/material.dart';
 
 class ProductView extends StatelessWidget {
-  const ProductView({super.key});
-
+  const ProductView({super.key, required this.food});
+  final FoodModel food;
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -17,7 +18,7 @@ class ProductView extends StatelessWidget {
           child: Column(
             children: [
               productappbar(size: size),
-              Productinfo(size: size),
+              Productinfo(size: size,food: food,),
               Spacer(),
               CustomeButton(
                 size: size,
