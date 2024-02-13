@@ -5,7 +5,7 @@ import 'package:caleb_g/app/features/Search/presentation/SearchView.dart';
 import 'package:caleb_g/app/features/auth/presentation/RigsterView.dart';
 import 'package:caleb_g/app/features/auth/presentation/loginView.dart';
 import 'package:caleb_g/app/features/auth/presentation/splashView.dart';
-import 'package:caleb_g/app/features/card/presentation/CartView.dart';
+import 'package:caleb_g/app/features/cart/presentation/CartView.dart';
 import 'package:caleb_g/app/features/like/presentation/LikeView.dart';
 import 'package:caleb_g/app/features/product/presentation/ProductView.dart';
 import 'package:caleb_g/app/features/profile/presentation/ProfileView.dart';

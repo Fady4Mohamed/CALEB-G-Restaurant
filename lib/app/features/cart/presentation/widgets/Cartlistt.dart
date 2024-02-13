@@ -1,5 +1,5 @@
 
-import 'package:caleb_g/app/features/card/presentation/widgets/CartContainer.dart';
+import 'package:caleb_g/app/features/cart/presentation/widgets/CartContainer.dart';
 import 'package:flutter/material.dart';
 
 class CartList extends StatelessWidget {

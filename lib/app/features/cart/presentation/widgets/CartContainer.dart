@@ -1,5 +1,5 @@
-import 'package:caleb_g/app/features/card/presentation/widgets/CartData.dart';
-import 'package:caleb_g/app/features/card/presentation/widgets/CartImage.dart';
+import 'package:caleb_g/app/features/cart/presentation/widgets/CartData.dart';
+import 'package:caleb_g/app/features/cart/presentation/widgets/CartImage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';

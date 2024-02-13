@@ -1,8 +1,8 @@
 import 'package:caleb_g/app/core/Styles/App_Colors.dart';
 import 'package:caleb_g/app/core/widgets/customeButton.dart';
-import 'package:caleb_g/app/features/card/presentation/widgets/CartAppBar.dart';
-import 'package:caleb_g/app/features/card/presentation/widgets/CartGuidetext.dart';
-import 'package:caleb_g/app/features/card/presentation/widgets/Cartlistt.dart';
+import 'package:caleb_g/app/features/cart/presentation/widgets/CartAppBar.dart';
+import 'package:caleb_g/app/features/cart/presentation/widgets/CartGuidetext.dart';
+import 'package:caleb_g/app/features/cart/presentation/widgets/Cartlistt.dart';
 import 'package:flutter/material.dart';
 
 class CartView extends StatelessWidget {
