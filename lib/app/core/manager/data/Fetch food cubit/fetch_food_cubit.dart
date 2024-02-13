@@ -7,6 +7,8 @@ part 'fetch_food_state.dart';
 class FetchFoodCubit extends Cubit<FetchFoodState> {
   FetchFoodCubit() : super(FetchFoodInitial());
   List<FoodModel> allfoodlist = [];
+  List<FoodModel> onlyfoodlist = [];
+  List<FoodModel> onlydrinklist = [];
   getallfood() async {
     emit(FetchFoodloding());
     print('llllllllllllloding');
@@ -15,7 +17,12 @@ class FetchFoodCubit extends Cubit<FetchFoodState> {
       await FirebaseFirestore.instance.collection('food').get();
   for (int v = 0; v < data.docs.length; v++) {
     allfoodlist.add(FoodModel.fromjason(data.docs[v]));
-    print(allfoodlist[v]);
+    if (data.docs[v]['category']=='food') {
+      onlyfoodlist.add(FoodModel.fromjason(data.docs[v]));
+    }else{
+       onlydrinklist.add(FoodModel.fromjason(data.docs[v]));
+    }
+    
   }
   emit(FetchFoodsuccsed());
 } on Exception catch (e) {

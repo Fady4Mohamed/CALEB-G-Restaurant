@@ -24,9 +24,9 @@ class tabs extends StatelessWidget {
 
           if (state is FetchFoodsuccsed) {
   return TabBarView(children: [
-    listitem(size: size),
-    listitem(size: size),
-    listitem(size: size),
+    listitem(size: size,food: BlocProvider.of<FetchFoodCubit>(context).allfoodlist,),
+    listitem(size: size,food: BlocProvider.of<FetchFoodCubit>(context).onlyfoodlist,),
+    listitem(size: size,food: BlocProvider.of<FetchFoodCubit>(context).onlydrinklist,),
   ]);
 }if(state is FetchFoodloding){
   return TabBarView(children: [

@@ -17,7 +17,7 @@ class itemprice extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(vertical: size.height * .02),
       child: Text(
-        food.price.toString(),
+        'GHS ${food.price.toString()}',
         style: style
             .style14(context: context)
             .copyWith(color: AppColors.kMainColor),

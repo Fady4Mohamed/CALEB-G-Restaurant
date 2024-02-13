@@ -16,12 +16,12 @@ import 'package:google_sign_in/google_sign_in.dart';
 abstract class AppRouter {
   static late String initializerout;
   static initializeApp() async {
-    GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+    bool googleUser = await GoogleSignIn().isSignedIn();
     User? user;
     await FirebaseAuth.instance.authStateChanges().listen((event) {
       user = event;
     });
-    if (user == null && googleUser == null) {
+    if (user == null && googleUser ) {
       initializerout = AppRouter.ksplashView;
     } else {
       initializerout = AppRouter.kHomeView;

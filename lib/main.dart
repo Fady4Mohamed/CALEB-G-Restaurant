@@ -1,5 +1,6 @@
 import 'package:caleb_g/app/core/app_routers.dart';
 import 'package:caleb_g/app/core/manager/data/Fetch%20food%20cubit/fetch_food_cubit.dart';
+import 'package:caleb_g/app/core/manager/data/user%20data%20information%20cubit/user_data_information_cubit.dart';
 import 'package:caleb_g/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -20,8 +21,15 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create:(context) => FetchFoodCubit()..getallfood(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => FetchFoodCubit()..getallfood(),
+        ),
+        BlocProvider(
+          create: (context) => UserDataInformationCubit(),
+        ),
+      ],
       child: MaterialApp.router(
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
