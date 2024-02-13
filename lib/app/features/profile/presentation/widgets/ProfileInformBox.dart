@@ -1,5 +1,8 @@
 import 'package:caleb_g/app/core/Styles/text_Style.dart';
+import 'package:caleb_g/app/core/manager/data/user%20data%20information%20cubit/user_data_information_cubit.dart';
+import 'package:caleb_g/app/features/profile/presentation/widgets/ChoiceImage.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ProfileInformBox extends StatelessWidget {
   const ProfileInformBox({
@@ -23,19 +26,13 @@ class ProfileInformBox extends StatelessWidget {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
-              padding: EdgeInsets.all(size.height * .02),
-              child: Image.asset(
-                'assats/image/Rectangle 6.png',
-                height: size.height * 0.07,
-              ),
-            ),
+            ChoiceImage(size: size),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Text(
-                  'Thelma Sara-bear',
+                  BlocProvider.of<UserDataInformationCubit>(context).name??'what',
                   style: style.style18(context: context),
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
@@ -43,7 +40,7 @@ class ProfileInformBox extends StatelessWidget {
                 SizedBox(
                   width: size.width * .5,
                   child: Text(
-                    'thelma_sara-bear@gmail.com',
+                    BlocProvider.of<UserDataInformationCubit>(context).email??'what@gmail.com',
                     style: style.style8(context: context),
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
