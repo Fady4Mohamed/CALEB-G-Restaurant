@@ -1,9 +1,11 @@
 import 'package:caleb_g/app/core/Styles/App_Colors.dart';
 import 'package:caleb_g/app/core/manager/models/FoodModel.dart';
 import 'package:caleb_g/app/core/widgets/customeButton.dart';
+import 'package:caleb_g/app/features/cart/data/manager/cubit/add_to_cart_cubit.dart';
 import 'package:caleb_g/app/features/product/presentation/widgets/Productinfo.dart';
 import 'package:caleb_g/app/features/product/presentation/widgets/productappbar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ProductView extends StatelessWidget {
   const ProductView({super.key, required this.food});
@@ -18,11 +20,16 @@ class ProductView extends StatelessWidget {
           child: Column(
             children: [
               productappbar(size: size),
-              Productinfo(size: size,food: food,),
+              Productinfo(
+                size: size,
+                food: food,
+              ),
               Spacer(),
               CustomeButton(
                 size: size,
-                onPressed: () {},
+                onPressed: () {
+                  BlocProvider.of<AddToCartCubit>(context).cart.add(food);
+                },
                 titel: 'Add to cart',
                 color: AppColors.kMainColor,
               ),

@@ -11,21 +11,26 @@ class UserDataInformationCubit extends Cubit<UserDataInformationState> {
   UserDataInformationCubit() : super(UserDataInformationInitial());
   File? file;
   String? email;
+  static  String? sname; 
   String? name;
   String? url;
   void getuser() async {
     if (GoogleSignIn().currentUser != null) {
       email = await GoogleSignIn().currentUser!.email;
-      name = email!.substring(0, email!.indexOf('@'));
+     // name = email!.substring(0, email!.indexOf('@'));
+     name='demo';
+     
     } else {
       await FirebaseAuth.instance.authStateChanges().listen((event) {
         if (event != null) {
           email = event.email;
           name = email!.substring(0, email!.indexOf('@'));
           url = event.photoURL;
-        }
+        }       
       });
     }
+    sname=name;
+    print(email);
   }
 
   Future<String> uploadImage() async {

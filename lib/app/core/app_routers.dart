@@ -17,11 +17,12 @@ abstract class AppRouter {
   static late String initializerout;
   static initializeApp() async {
     bool googleUser = await GoogleSignIn().isSignedIn();
+    
     User? user;
     await FirebaseAuth.instance.authStateChanges().listen((event) {
       user = event;
     });
-    if (user == null && googleUser ) {
+    if (user == null && !googleUser ) {
       initializerout = AppRouter.ksplashView;
     } else {
       initializerout = AppRouter.kHomeView;

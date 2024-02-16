@@ -32,7 +32,7 @@ class ProfileInformBox extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Text(
-                  BlocProvider.of<UserDataInformationCubit>(context).name??'what',
+                 BlocProvider.of<UserDataInformationCubit>(context).name??'what',
                   style: style.style18(context: context),
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,

@@ -1,3 +1,4 @@
+import 'package:caleb_g/app/core/manager/models/FoodModel.dart';
 import 'package:caleb_g/app/features/cart/presentation/widgets/CartData.dart';
 import 'package:caleb_g/app/features/cart/presentation/widgets/CartImage.dart';
 import 'package:flutter/material.dart';
@@ -6,9 +7,9 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 class CartContainer extends StatelessWidget {
   const CartContainer({
     super.key,
-    required this.size,
+    required this.size, required this.food,
   });
-
+  final FoodModel food;
   final Size size;
 
   @override
@@ -58,9 +59,9 @@ startActionPane: ActionPane(motion: const ScrollMotion(), children: [
         ], color: Colors.white, borderRadius: BorderRadius.circular(20)),
         child: Row(
           children: [
-            CartImage(size: size),
+            CartImage(size: size,food: food),
             Spacer(),
-            CartData(size: size),
+            CartData(size: size, food: food,),
             Spacer(
               flex: 2,
             ),
