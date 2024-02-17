@@ -2,34 +2,49 @@
 import 'package:caleb_g/app/core/Styles/App_Colors.dart';
 import 'package:caleb_g/app/core/Styles/text_Style.dart';
 import 'package:caleb_g/app/core/manager/models/FoodModel.dart';
+import 'package:caleb_g/app/features/cart/data/manager/cubit/add_to_cart_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class CartData extends StatelessWidget {
+class CartData extends StatefulWidget {
   const CartData({
     super.key,
-    required this.size, required this.food,
+    required this.size, required this.food, required this.index,
   });
   final FoodModel food;
   final Size size;
+  final int index;
 
   @override
+  State<CartData> createState() => _CartDataState();
+}
+
+class _CartDataState extends State<CartData> {
+  int amount =1;
+  @override
   Widget build(BuildContext context) {
+    if (BlocProvider.of<AddToCartCubit>(context).amountlist.elementAtOrNull(widget.index)==null) {
+     BlocProvider.of<AddToCartCubit>(context).amountlist.insert(widget.index, amount); 
+    }else{
+      amount=BlocProvider.of<AddToCartCubit>(context).amountlist.elementAt(widget.index);
+    }
+     
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         SizedBox(
-            width: size.width * .4,
+            width: widget.size.width * .4,
             child: Text(
-              food.name,
+              widget.food.name,
               style: style.style22(context: context),
             )),
         SizedBox(
-          width: size.width * .4,
+          width: widget.size.width * .4,
           child: Row(
             children: [
               Text(
-                'GHP${food.price.toString()}',
+                'GHS${widget.food.price.toString()}',
                 style: style
                     .style17(context: context)
                     .copyWith(color: AppColors.kMainColor),
@@ -40,19 +55,33 @@ class CartData extends StatelessWidget {
                     borderRadius: BorderRadius.circular(40),
                     color: Colors.red),
                 child: Padding(
-                  padding:  EdgeInsets.all(size.width * .015),
+                  padding:  EdgeInsets.all(widget.size.width * .015),
                   child: Row(
                     children: [
                       GestureDetector(
-                        onTap: (){},
+                        onTap: (){
+                          amount++;
+                            BlocProvider.of<AddToCartCubit>(context).amountlist.insert(widget.index, amount);
+                          setState(() {
+                            
+                          });
+                        },
                         child: Icon(FontAwesomeIcons.plus,
-                                size: size.width * .04),
+                                size: widget.size.width * .04),
                       ),
-                      Text(' 1 ',style: style.style12(context: context),),
+                      Text(' ${amount} ',style: style.style12(context: context),),
                        GestureDetector(
-                        onTap: (){},
+                        onTap: (){
+                          if(amount>1){
+                            amount--;
+                            BlocProvider.of<AddToCartCubit>(context).amountlist.insert(widget.index, amount);
+                            setState(() {
+                              
+                            });
+                          }
+                        },
                        child:  Icon(FontAwesomeIcons.minus,
-                              size: size.width * .04),),
+                              size: widget.size.width * .04),),
                     ],
                   ),
                 ),

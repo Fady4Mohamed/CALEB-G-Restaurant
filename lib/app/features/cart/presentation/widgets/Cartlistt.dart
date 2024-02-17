@@ -20,7 +20,8 @@ class _CartListState extends State<CartList> {
    late List<FoodModel> foodlist;
  @override
   void initState() {
-    foodlist=BlocProvider.of<AddToCartCubit>(context).cart;
+    foodlist=BlocProvider.of<AddToCartCubit>(context).cartinapp;
+    print(foodlist.length);
     // TODO: implement initState
     super.initState();
   }
@@ -36,7 +37,7 @@ class _CartListState extends State<CartList> {
                 itemBuilder: (BuildContext contex, int i) {
          return Center(child: Padding(
            padding: const EdgeInsets.all(8.0),
-           child:CartContainer(size: widget.size,food: foodlist[i]),
+           child:CartContainer(size: widget.size,food: foodlist[i],index: i),
          ));
                 },
               ),

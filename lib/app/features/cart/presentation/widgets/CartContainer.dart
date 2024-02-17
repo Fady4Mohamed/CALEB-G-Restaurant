@@ -7,8 +7,9 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 class CartContainer extends StatelessWidget {
   const CartContainer({
     super.key,
-    required this.size, required this.food,
+    required this.size, required this.food, required this.index,
   });
+  final int index;
   final FoodModel food;
   final Size size;
 
@@ -61,7 +62,7 @@ startActionPane: ActionPane(motion: const ScrollMotion(), children: [
           children: [
             CartImage(size: size,food: food),
             Spacer(),
-            CartData(size: size, food: food,),
+            CartData(size: size, food: food,index: index),
             Spacer(
               flex: 2,
             ),

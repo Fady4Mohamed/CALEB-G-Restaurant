@@ -10,17 +10,17 @@ part 'add_to_cart_state.dart';
 class AddToCartCubit extends Cubit<AddToCartState> {
   AddToCartCubit() : super(AddToCartInitial());
    String username =UserDataInformationCubit.sname!;
-   List<FoodModel> cart=[];
+   List<FoodModel> cartinapp=[];
+   List<int> amountlist=[];
     Future<void> completeOrder({required String foodid,required int amount}) async {
     emit(AddToCartloding());
     DocumentReference cart = FirebaseFirestore.instance.collection('${username}cart').doc();
     cart.set({
       'amount': amount,
-      'foodid': foodid
+      'foodid': foodid,
     }).then((value) {
       emit(AddToCartsuccess());
-    })
-        // ignore: invalid_return_type_for_catch_error
+    })  // ignore: invalid_return_type_for_catch_error
         .catchError((error) {
       emit(AddToCartfailure(error: error.toString()));
     });
