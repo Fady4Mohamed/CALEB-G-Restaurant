@@ -24,11 +24,9 @@ class _CartDataState extends State<CartData> {
   int amount =1;
   @override
   Widget build(BuildContext context) {
-    if (BlocProvider.of<AddToCartCubit>(context).amountlist.elementAtOrNull(widget.index)==null) {
-     BlocProvider.of<AddToCartCubit>(context).amountlist.insert(widget.index, amount); 
-    }else{
+    
       amount=BlocProvider.of<AddToCartCubit>(context).amountlist.elementAt(widget.index);
-    }
+    
      
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,

@@ -11,3 +11,5 @@ final class AddToCartfailure extends AddToCartState {
   AddToCartfailure({required this.error});
 }
 final class AddToCartloding extends AddToCartState {}
+final class AddToCartflagetrue extends AddToCartState {}
+final class AddToCartflagefalse extends AddToCartState {}

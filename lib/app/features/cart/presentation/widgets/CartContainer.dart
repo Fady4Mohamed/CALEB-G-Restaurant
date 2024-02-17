@@ -1,7 +1,9 @@
 import 'package:caleb_g/app/core/manager/models/FoodModel.dart';
+import 'package:caleb_g/app/features/cart/data/manager/cubit/add_to_cart_cubit.dart';
 import 'package:caleb_g/app/features/cart/presentation/widgets/CartData.dart';
 import 'package:caleb_g/app/features/cart/presentation/widgets/CartImage.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 class CartContainer extends StatelessWidget {
@@ -36,7 +38,11 @@ startActionPane: ActionPane(motion: const ScrollMotion(), children: [
                   SlidableAction(
                     flex: 10,
                      borderRadius: BorderRadius.circular(20),
-                    onPressed: (k){},
+                    onPressed: (k){
+                      BlocProvider.of<AddToCartCubit>(context).amountlist.insert(index,1);
+                      BlocProvider.of<AddToCartCubit>(context).cartinapp.removeAt(index);
+                      BlocProvider.of<AddToCartCubit>(context).refresh();
+                    },
                     backgroundColor: Colors.red,
                     foregroundColor: Colors.white,
                     icon: FontAwesomeIcons.solidTrashCan,
