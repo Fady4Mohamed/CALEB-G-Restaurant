@@ -29,6 +29,7 @@ class ProductView extends StatelessWidget {
                 size: size,
                 onPressed: () {
                   BlocProvider.of<AddToCartCubit>(context).cartinapp.add(food);
+                  BlocProvider.of<AddToCartCubit>(context).amountlist.add(1);
                 },
                 titel: 'Add to cart',
                 color: AppColors.kMainColor,

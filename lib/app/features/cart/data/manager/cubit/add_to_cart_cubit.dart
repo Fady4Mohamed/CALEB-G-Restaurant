@@ -11,7 +11,7 @@ class AddToCartCubit extends Cubit<AddToCartState> {
   AddToCartCubit() : super(AddToCartInitial());
    String username =UserDataInformationCubit.sname!;
    List<FoodModel> cartinapp=[];
-   List<int> amountlist=[1];
+   List<int> amountlist=[];
     Future<void> comp({required String foodid,required int amount}) async {
     emit(AddToCartloding());
     DocumentReference cart = FirebaseFirestore.instance.collection('${username}cart').doc();
@@ -29,8 +29,11 @@ class AddToCartCubit extends Cubit<AddToCartState> {
     if (cartinapp.isNotEmpty) {
   for (var i = 0; i < cartinapp.length; i++) {
    await comp(foodid: cartinapp[i].id, amount: amountlist[i]);
-     emit(AddToCartsuccess());
-  }
+    }
+   emit(AddToCartsuccess());
+   await Future.delayed(Duration(seconds: 1));
+   cartinapp.clear();
+   amountlist.clear();
 }
   }
   refresh(){

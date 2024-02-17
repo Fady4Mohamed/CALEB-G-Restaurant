@@ -52,7 +52,7 @@ class _CartViewState extends State<CartView> {
                        setState(() {
                         
                       });
-                      await Future.delayed(Duration(seconds: 2));
+                      await Future.delayed(Duration(seconds: 1));
                       buttoncolor = AppColors.kMainColor;
                        setState(() {
                         
