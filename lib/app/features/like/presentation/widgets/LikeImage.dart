@@ -1,11 +1,12 @@
+import 'package:caleb_g/app/core/manager/models/FoodModel.dart';
 import 'package:flutter/material.dart';
 
 class LikeImage extends StatelessWidget {
   const LikeImage({
     super.key,
-    required this.size,
+    required this.size, required this.food,
   });
-
+  final FoodModel food;
   final Size size;
 
   @override
@@ -25,7 +26,7 @@ class LikeImage extends StatelessWidget {
         ),
         child: CircleAvatar(
           radius: size.height * 0.045,
-          foregroundImage: AssetImage('assats/image/image 3.png'),
+          foregroundImage: NetworkImage(food.image),
         ),
       ),
     );

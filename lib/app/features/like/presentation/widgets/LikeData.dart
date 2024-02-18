@@ -1,15 +1,16 @@
 
 import 'package:caleb_g/app/core/Styles/App_Colors.dart';
 import 'package:caleb_g/app/core/Styles/text_Style.dart';
+import 'package:caleb_g/app/core/manager/models/FoodModel.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class LikeData extends StatelessWidget {
   const LikeData({
     super.key,
-    required this.size,
+    required this.size, required this.food,
   });
-
+  final FoodModel food;
   final Size size;
 
   @override
@@ -22,7 +23,7 @@ class LikeData extends StatelessWidget {
             child: Padding(
               padding: EdgeInsets.only(top: size.height * .012),
               child: Text(
-                'fish dish',
+                food.name,
                 style: style.style22(context: context),
               ),
             )),
@@ -31,7 +32,7 @@ class LikeData extends StatelessWidget {
           child: Row(
             children: [
               Text(
-                r'28612250$',
+                'GHS${food.price}',
                 style: style
                     .style17(context: context)
                     .copyWith(color: AppColors.kMainColor),
@@ -39,8 +40,9 @@ class LikeData extends StatelessWidget {
               IconButton(
                   onPressed: () {},
                   icon: Icon(
-                    FontAwesomeIcons.heart,
+                    FontAwesomeIcons.solidHeart,
                     size: size.height * .025,
+                    color: Colors.red,
                   ))
             ],
           ),

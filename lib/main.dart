@@ -2,6 +2,8 @@ import 'package:caleb_g/app/core/app_routers.dart';
 import 'package:caleb_g/app/core/manager/data/Fetch%20food%20cubit/fetch_food_cubit.dart';
 import 'package:caleb_g/app/core/manager/data/user%20data%20information%20cubit/user_data_information_cubit.dart';
 import 'package:caleb_g/app/features/cart/data/manager/cubit/add_to_cart_cubit.dart';
+import 'package:caleb_g/app/features/like/data/manager/cubit/add_favorite_cubit.dart';
+import 'package:caleb_g/app/features/like/data/manager/cubit/getfavorite_cubit.dart';
 import 'package:caleb_g/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -32,6 +34,12 @@ class MyApp extends StatelessWidget {
         ),
          BlocProvider(
           create: (context) => AddToCartCubit(),
+        ),
+        BlocProvider(
+          create: (context) => AddFavoriteCubit(),
+        ),
+        BlocProvider(
+          create: (context) => FavoriteCubit(),
         ),
       ],
       child: MaterialApp.router(

@@ -19,7 +19,7 @@ class ProductView extends StatelessWidget {
           height: size.height,
           child: Column(
             children: [
-              productappbar(size: size),
+              productappbar(size: size,food: food),
               Productinfo(
                 size: size,
                 food: food,

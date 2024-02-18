@@ -27,19 +27,17 @@ class _HasHistoryBoodyState extends State<HasHistoryBoody> {
   }
   @override
   Widget build(BuildContext context) {
-    return  Expanded(
-            child: GridView.builder(
-                itemCount: food.length,
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    mainAxisSpacing: 8,
-                    mainAxisExtent:widget. size.height * .3,
-                    crossAxisCount: 2),
-                itemBuilder: (BuildContext contex, int i) {
-                  return Padding(
-                    padding: EdgeInsets.only(left:widget. size.width * .06),
-                    child: SearchItem(size:widget. size, food: food[i]),
-                  );
-                }),
+    return  GridView.builder(
+        itemCount: food.length,
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            mainAxisSpacing: 8,
+            mainAxisExtent:widget. size.height * .3,
+            crossAxisCount: 2),
+        itemBuilder: (BuildContext contex, int i) {
+          return Padding(
+            padding: EdgeInsets.only(left:widget. size.width * .06),
+            child: SearchItem(size:widget. size, food: food[i]),
           );
+        });
   }
 }

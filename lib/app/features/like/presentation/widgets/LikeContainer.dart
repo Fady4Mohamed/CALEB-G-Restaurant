@@ -1,3 +1,4 @@
+import 'package:caleb_g/app/core/manager/models/FoodModel.dart';
 import 'package:caleb_g/app/features/like/presentation/widgets/LikeData.dart';
 import 'package:caleb_g/app/features/like/presentation/widgets/LikeImage.dart';
 import 'package:flutter/material.dart';
@@ -5,9 +6,9 @@ import 'package:flutter/material.dart';
 class LikeContainer extends StatelessWidget {
   const LikeContainer({
     super.key,
-    required this.size,
+    required this.size, required this.food,
   });
-
+  final FoodModel food;
   final Size size;
 
   @override
@@ -24,9 +25,9 @@ class LikeContainer extends StatelessWidget {
       ], color: Colors.white, borderRadius: BorderRadius.circular(20)),
       child: Row(
         children: [
-          LikeImage(size: size),
+          LikeImage(size: size,food:food ),
           const Spacer(),
-          LikeData(size: size),
+          LikeData(size: size,food: food),
           const Spacer(
             flex: 2,
           ),
