@@ -6,6 +6,7 @@ import 'package:caleb_g/app/features/cart/presentation/widgets/CartGuidetext.dar
 import 'package:caleb_g/app/features/cart/presentation/widgets/Cartlistt.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class CartView extends StatefulWidget {
   const CartView({super.key});
@@ -15,7 +16,7 @@ class CartView extends StatefulWidget {
 }
 
 class _CartViewState extends State<CartView> {
-   Color buttoncolor = AppColors.kMainColor;
+  Color buttoncolor = AppColors.kMainColor;
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -29,45 +30,43 @@ class _CartViewState extends State<CartView> {
           ),
           CartList(size: size),
           BlocListener<AddToCartCubit, AddToCartState>(
-                  listener: (context, state) async {
-                    if (state is AddToCartloding) {
-                      buttoncolor = Colors.amber;
-                      setState(() {
-                        
-                      });
-                    }
-                    if (state is AddToCartfailure) {
-                      buttoncolor = const Color.fromARGB(255, 95, 10, 4);
-                       setState(() {
-                        
-                      });
-                      await Future.delayed(Duration(seconds: 2));
-                      buttoncolor = AppColors.kMainColor;
-                       setState(() {
-                        
-                      });
-                    }
-                    if (state is AddToCartsuccess) {
-                      buttoncolor = Colors.green;
-                       setState(() {
-                        
-                      });
-                      await Future.delayed(Duration(seconds: 1));
-                      buttoncolor = AppColors.kMainColor;
-                       setState(() {
-                        
-                      });
-                    }
-                  },
-                  child: CustomeButton(
-                    size: size,
-                    onPressed: () async {
-                      BlocProvider.of<AddToCartCubit>(context).complet();
-                    },
-                    titel: 'add',
-                    color: buttoncolor,
-                  ),
-                ),
+            listener: (context, state) async {
+              if (state is AddToCartloding) {
+                buttoncolor = Colors.amber;
+                setState(() {});
+              }
+              if (state is AddToCartfailure) {
+                Fluttertoast.showToast(
+                    msg: state.error,
+                    toastLength: Toast.LENGTH_SHORT,
+                    gravity: ToastGravity.BOTTOM,
+                    timeInSecForIosWeb: 1,
+                    backgroundColor: Colors.red,
+                    textColor: Colors.white,
+                    fontSize: 16.0);
+                buttoncolor = const Color.fromARGB(255, 95, 10, 4);
+                setState(() {});
+                await Future.delayed(Duration(seconds: 2));
+                buttoncolor = AppColors.kMainColor;
+                setState(() {});
+              }
+              if (state is AddToCartsuccess) {
+                buttoncolor = Colors.green;
+                setState(() {});
+                await Future.delayed(Duration(seconds: 1));
+                buttoncolor = AppColors.kMainColor;
+                setState(() {});
+              }
+            },
+            child: CustomeButton(
+              size: size,
+              onPressed: () async {
+                BlocProvider.of<AddToCartCubit>(context).complet();
+              },
+              titel: 'compet order',
+              color: buttoncolor,
+            ),
+          ),
           SizedBox(
             height: size.height * 0.04,
           ),

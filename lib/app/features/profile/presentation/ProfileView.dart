@@ -7,6 +7,7 @@ import 'package:caleb_g/app/features/profile/presentation/widgets/ProfileInformB
 import 'package:caleb_g/app/features/profile/presentation/widgets/ProfilePayMethod.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class ProfileView extends StatefulWidget {
   const ProfileView({super.key});
@@ -54,40 +55,40 @@ class _ProfileViewState extends State<ProfileView> {
             children: [
               Spacer(),
               BlocListener<UserDataInformationCubit, UserDataInformationState>(
-                listener: (context, state)async {
-                   if (state is UserDataInformationloding) {
-                      buttoncolor = Colors.amber;
-                      setState(() {
-                        
-                      });
-                    }
-                    if (state is UserDataInformationfailer) {
-                      buttoncolor = const Color.fromARGB(255, 95, 10, 4);
-                       setState(() {
-                        
-                      });
-                      await Future.delayed(Duration(seconds: 2));
-                      buttoncolor = AppColors.kMainColor;
-                       setState(() {
-                        
-                      });
-                    }
-                    if (state is UserDataInformationsuccess) {
-                      buttoncolor = Colors.green;
-                       setState(() {
-                        
-                      });
-                      await Future.delayed(Duration(seconds: 2));
-                      buttoncolor = AppColors.kMainColor;
-                       setState(() {
-                        
-                      });
-                    }
-                  },
+                listener: (context, state) async {
+                  if (state is UserDataInformationloding) {
+                    buttoncolor = Colors.amber;
+                    setState(() {});
+                  }
+                  if (state is UserDataInformationfailer) {
+                    Fluttertoast.showToast(
+                        msg: state.error,
+                        toastLength: Toast.LENGTH_SHORT,
+                        gravity: ToastGravity.BOTTOM,
+                        timeInSecForIosWeb: 1,
+                        backgroundColor: Colors.red,
+                        textColor: Colors.white,
+                        fontSize: 16.0);
+
+                    buttoncolor = const Color.fromARGB(255, 95, 10, 4);
+                    setState(() {});
+                    await Future.delayed(Duration(seconds: 2));
+                    buttoncolor = AppColors.kMainColor;
+                    setState(() {});
+                  }
+                  if (state is UserDataInformationsuccess) {
+                    buttoncolor = Colors.green;
+                    setState(() {});
+                    await Future.delayed(Duration(seconds: 2));
+                    buttoncolor = AppColors.kMainColor;
+                    setState(() {});
+                  }
+                },
                 child: CustomeButton(
                   size: size,
                   onPressed: () {
-                    BlocProvider.of<UserDataInformationCubit>(context).setimagetoprofile();
+                    BlocProvider.of<UserDataInformationCubit>(context)
+                        .setimagetoprofile();
                   },
                   titel: 'Update Information',
                   color: buttoncolor,

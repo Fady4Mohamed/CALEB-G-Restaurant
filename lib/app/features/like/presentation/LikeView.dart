@@ -1,9 +1,11 @@
+import 'package:caleb_g/app/core/Styles/App_Colors.dart';
 import 'package:caleb_g/app/core/manager/models/FoodModel.dart';
 import 'package:caleb_g/app/features/like/data/manager/cubit/getfavorite_cubit.dart';
 import 'package:caleb_g/app/features/like/presentation/widgets/LikeAppBar.dart';
-import 'package:caleb_g/app/features/like/presentation/widgets/LikeContainer.dart';
+import 'package:caleb_g/app/features/like/presentation/widgets/likeListe.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class LikeView extends StatelessWidget {
   const LikeView({super.key});
@@ -25,21 +27,31 @@ class LikeView extends StatelessWidget {
               builder: (context, state) {
                 if (state is Favoritesuccess) {
                   food.addAll(BlocProvider.of<FavoriteCubit>(context).foodlist);
-                  return ListView.builder(
-                    padding: EdgeInsets.only(bottom: 20),
-                    itemCount: food.length,
-                    itemBuilder: (BuildContext contex, int i) {
-                      return Padding(
-                        padding: EdgeInsets.only(
-                            top: 15,
-                            right: size.width * .1,
-                            left: size.width * .1),
-                        child: LikeContainer(size: size, food: food[i]),
-                      );
-                    },
-                  );
+                  return food.isEmpty
+                      ? Text('no favorite yet')
+                      : likeListe(food: food, size: size);
+                } else if (state is Favoritefailure) {
+                  Fluttertoast.showToast(
+                      msg: state.error,
+                      toastLength: Toast.LENGTH_SHORT,
+                      gravity: ToastGravity.BOTTOM,
+                      timeInSecForIosWeb: 1,
+                      backgroundColor: Colors.red,
+                      textColor: Colors.white,
+                      fontSize: 16.0);
+                  return const SizedBox();
                 } else {
-                  return Text('loding. . .');
+                  return Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Center(
+                          child: Transform.scale(
+                            scale: 0.8,
+                            child: const CircularProgressIndicator(
+                                color: AppColors.kMainColor),
+                          ),
+                        ),
+                      ]);
                 }
               },
             ),

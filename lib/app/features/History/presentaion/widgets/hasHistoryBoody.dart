@@ -1,6 +1,7 @@
 
 import 'package:caleb_g/app/core/manager/models/FoodModel.dart';
 import 'package:caleb_g/app/features/History/data/manger/cubit/order_histroy_cubit.dart';
+import 'package:caleb_g/app/features/History/presentaion/widgets/NoHistoryBoody.dart';
 import 'package:caleb_g/app/features/Search/presentation/widgets/SearchItem.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -27,7 +28,7 @@ class _HasHistoryBoodyState extends State<HasHistoryBoody> {
   }
   @override
   Widget build(BuildContext context) {
-    return  GridView.builder(
+    return food.isEmpty?NoHistoryBoody(size:widget. size ,):  GridView.builder(
         itemCount: food.length,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             mainAxisSpacing: 8,
