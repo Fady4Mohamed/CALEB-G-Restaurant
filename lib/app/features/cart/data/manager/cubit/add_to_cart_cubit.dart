@@ -14,6 +14,7 @@ class AddToCartCubit extends Cubit<AddToCartState> {
    List<int> amountlist=[];
     Future<void> comp({required String foodid,required int amount}) async {
     emit(AddToCartloding());
+    //order
     DocumentReference cart = FirebaseFirestore.instance.collection('${username}cart').doc();
     cart.set({
       'amount': amount,
