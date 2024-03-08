@@ -48,32 +48,36 @@ class _cartButtonState extends State<cartButton> {
         }
       },
       child: BlocListener<PaymentCubit, PaymentState>(
-        listener: (context, state)async {
+        listener: (context, state) async {
           if (state is Paymentloding) {
             Fluttertoast.showToast(
-              msg: 'The payment was in Initialisation',
-              toastLength: Toast.LENGTH_SHORT,
-              gravity: ToastGravity.BOTTOM,
-              timeInSecForIosWeb: 1,
-              backgroundColor: Colors.amber,
-              textColor: Colors.black,
-              fontSize: 16.0);
-        }
-        if (state is Paymentfailure) {
-          Fluttertoast.showToast(
-              msg: state.error,
-              toastLength: Toast.LENGTH_SHORT,
-              gravity: ToastGravity.BOTTOM,
-              timeInSecForIosWeb: 1,
-              backgroundColor: Colors.red,
-              textColor: Colors.white,
-              fontSize: 16.0);
-        }
+                msg: 'The payment was in Initialisation',
+                toastLength: Toast.LENGTH_SHORT,
+                gravity: ToastGravity.BOTTOM,
+                timeInSecForIosWeb: 1,
+                backgroundColor: Colors.amber,
+                textColor: Colors.black,
+                fontSize: 16.0);
+          }
+          if (state is Paymentfailure) {
+            Fluttertoast.showToast(
+                msg: state.error,
+                toastLength: Toast.LENGTH_SHORT,
+                gravity: ToastGravity.BOTTOM,
+                timeInSecForIosWeb: 1,
+                backgroundColor: Colors.red,
+                textColor: Colors.white,
+                fontSize: 16.0);
+          }if (state is Paymentsuccess) {
+            BlocProvider.of<AddToCartCubit>(context).complet();
+          }
         },
         child: CustomeButton(
           size: widget.size,
           onPressed: () async {
-           await BlocProvider.of<PaymentCubit>(context).makepayment(paymentIntentInputModel: PaymentIntentInputModel(amount: '1000', currency: 'USD'));
+            await BlocProvider.of<PaymentCubit>(context).makepayment(
+                paymentIntentInputModel:
+                    PaymentIntentInputModel(amount: '${BlocProvider.of<AddToCartCubit>(context).salary.toInt()}00', currency: 'USD'));
           },
           titel: 'compet order',
           color: buttoncolor,

@@ -10,6 +10,7 @@ part 'add_to_cart_state.dart';
 class AddToCartCubit extends Cubit<AddToCartState> {
   AddToCartCubit() : super(AddToCartInitial());
    String username =UserDataInformationCubit.sname!;
+   double salary =0;
    List<FoodModel> cartinapp=[];
    List<int> amountlist=[];
     Future<void> comp({required String foodid,required int amount}) async {
@@ -39,6 +40,6 @@ class AddToCartCubit extends Cubit<AddToCartState> {
   }
   refresh(){
     emit(AddToCartflagetrue());
-    emit(AddToCartflagetrue());
+    emit(AddToCartflagefalse());
   }
 }
