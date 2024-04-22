@@ -1,7 +1,7 @@
 import 'package:caleb_g/app/core/strip%20payment/data/models/PaymentIntentInputModel.dart';
 import 'package:caleb_g/app/core/strip%20payment/data/models/payment_intent_model/payment_intent_model.dart';
 import 'package:caleb_g/app/core/strip%20payment/data/services/APIservices.dart';
-import 'package:caleb_g/app/core/strip%20payment/data/services/secretkeys.dart';
+import 'package:caleb_g/app/core/strip%20payment/data/services/secret_keys.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
 

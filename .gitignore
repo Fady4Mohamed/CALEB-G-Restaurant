@@ -9,7 +9,7 @@
 .history
 .svn/
 migrate_working_dir/
-
+lib/app/core/strip payment/data/services/secret_keys.dart
 # IntelliJ related
 *.iml
 *.ipr
