@@ -22,9 +22,7 @@ class _SearchViewState extends State<SearchView> {
     if (Searchname == null) {
       foods = BlocProvider.of<FetchFoodCubit>(context).allfoodlist;
     }
-
-    // TODO: implement initState
-    super.initState();
+   super.initState();
   }
 
   @override

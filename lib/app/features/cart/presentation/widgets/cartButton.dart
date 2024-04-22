@@ -79,7 +79,7 @@ class _cartButtonState extends State<cartButton> {
                 paymentIntentInputModel:
                     PaymentIntentInputModel(amount: '${BlocProvider.of<AddToCartCubit>(context).salary.toInt()}00', currency: 'USD'));
           },
-          titel: 'compet order',
+          titel: 'complet order',
           color: buttoncolor,
         ),
       ),

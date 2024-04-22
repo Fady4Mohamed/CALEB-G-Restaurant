@@ -16,7 +16,7 @@ class OrderHistroyCubit extends Cubit<OrderHistroyState> {
     emit(OrderHistroyloding());
     try {
   QuerySnapshot data =
-      await FirebaseFirestore.instance.collection('${username}cart').get();
+      await FirebaseFirestore.instance.collection('${username}cartHistory').get();
   for (int v = 0; v < data.docs.length; v++) {
     cartlist.add(cartmodel.fromjason(data.docs[v]));
     foodlist.add(FoodModel.fromjason( await FirebaseFirestore.instance.collection('food').doc(cartlist[v].foodid).get() ));

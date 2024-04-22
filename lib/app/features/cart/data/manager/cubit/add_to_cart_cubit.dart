@@ -38,6 +38,7 @@ class AddToCartCubit extends Cubit<AddToCartState> {
       'adresse': '2 said ashta street',
       'date':  DateTime.now().toString(),
       'orderid':order.id,
+      'price':salary,
     }).then((value) {
     
     })  // ignore: invalid_return_type_for_catch_error
